@@ -1,0 +1,6 @@
+console.log("the third one that is arrow function");
+const add2 = (x,y) => {
+    console.log(x+y);
+
+}
+add2(9,5)

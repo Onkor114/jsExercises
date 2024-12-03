@@ -1,0 +1,12 @@
+{
+    "id": 1,
+    "name": "john",
+    "city": "london",
+    "products": [
+        {
+            "id": 1,
+            "name": "apple",
+            "price": 10
+        }
+    ]
+}
