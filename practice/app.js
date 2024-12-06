@@ -73,30 +73,137 @@
 // }
 // fetchData()
 
-function operate( a,b,callback){
-    return callback(a,b);
+// function operate( a,b,callback){
+//     return callback(a,b);
+// }
+
+// function add(a,b){
+//     return a+b;
+// }
+// function subtract(a,b){
+//     return a-b;
+// }
+// function multiply(a,b){
+//     return a*b;
+// }
+// function divide(a,b){
+//     if(b!=0){
+//         return a/b;
+//     }else {
+//         throw new Error("Cannot divide by zero");
+//     }
+// }
+
+// console.log("addition " + operate(2,3, add));
+// console.log("addition " + operate(6,3, subtract));
+// console.log("addition " + operate(2,3, multiply));
+// console.log("addition " + operate(4,2, divide));
+
+
+
+//GET METHON
+// async function fetchData() {
+//     try {
+//         console.log("starting fetching data ..");
+//         let respond = await fetch('https://jsonplaceholder.typicode.com/posts');
+        
+//         if(!respond.ok){
+//             throw new Error(`HTTP error! status: ${respond.status}`);
+//         }
+//         let data = await respond.json();
+//             console.log(data);
+//     }catch(error){
+//         console.log(error)
+//     }
+// }
+// fetchData()
+
+// async function postData() {
+//     try {
+//         console.log("starting posting data ..");
+//         let respond = await fetch('https://jsonplaceholder.typicode.com/posts', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//             },
+//             body: JSON.stringify({
+//                 title: 'foo',
+//                 body: 'bar',
+//                 userId: 1
+//             }),
+//         });
+        
+//         if(!respond.ok){
+//             throw new Error(`HTTP error! status: ${respond.status}`);
+//         }
+//         // before json
+//         console.log("before json" , respond)
+//         let data = await respond.json();
+//         console.log("after json" , respond)
+//             console.log(data);
+
+//     }catch(error){
+//         console.log(error)
+//     }
+// }
+// postData()
+
+
+
+///////////////////DOM MANIPULATION
+
+const  header = document.querySelector('#header');
+const textContent = document.querySelector('#paragraph');
+const body = document.querySelector('body')
+
+function changeContent() {
+    header.textContent = "new content";
+    header.style.fontSize = "19px";
+    header.style.color = "blue";
 }
 
-function add(a,b){
-    return a+b;
+function changeElement() {
+    paragraph.innerHTML = `hi welcome to my website <strong> to like my website </strong>`
+    paragraph.style.color = "blue";
 }
-function subtract(a,b){
-    return a-b;
+
+//light / dark mode
+function lightMode() {
+    body.style.backgroundColor = "white";
+    body.style.color = "black";
 }
-function multiply(a,b){
-    return a*b;
+function darkMode() {
+    body.style.backgroundColor = "black";
+    body.style.color = "white";
 }
-function divide(a,b){
-    if(b!=0){
-        return a/b;
+
+////////// adding and removing items
+
+const list = document.querySelector('#list');
+
+function addItem() {
+    const newItem = document.createElement('li');
+    newItem.textContent = "new item";
+    list.appendChild(newItem);
+}
+
+function removeItem () {
+    if (list.lastElementChild) {
+       list.removeChild(list.lastChild); 
     }else {
-        throw new Error("Cannot divide by zero");
+        alert(" Elements has been removed ..")
     }
+    
 }
 
-console.log("addition " + operate(2,3, add));
-console.log("addition " + operate(6,3, subtract));
-console.log("addition " + operate(2,3, multiply));
-console.log("addition " + operate(4,2, divide));
-
-
+const image = document.querySelector('#image');
+function changeImage () {
+    const url = prompt("inter your image url");
+    const borderRadius = prompt("inter your image porder-radius (in px)");
+    const padding = prompt("inter your image padding (in px)");
+    const height = prompt("inter your image heigh")
+    image.style.height = height + "px";
+    image.style.borderRadius = borderRadius + "px";
+    image.style.padding = padding + "px";
+    image.setAttribute("src", url)
+}

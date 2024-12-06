@@ -6,19 +6,41 @@
     <title>Practice</title>
 </head>
 <style>
-    h1{
+  body{
         text-align: center;
         background-color: bisque;
         height: 90vh;
         width: 100%;
-        font-size: 4rem;
+        font-size: 2rem;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
     }
 </style>
 <body>
 
-    <h1>More practive makes you prefect</h1>
+    <h1 id="header">More practive makes you prefect</h1>
+    <p id="paragraph">this is a paragraph</p>
 
-    <script src="app.js"></script>
+    <button onclick="changeContent()">change content</button>
+    <button onclick="changeElement()">change Element</button>
+
     
+
+    <button onclick="lightMode()">🔅</button>
+    <button onclick="darkMode()">🕶️</button>
+
+    <ul id="list">
+        <li> item 1</li>
+        <li> item 2</li>
+    </ul>
+    <button onclick="addItem()">Add Item</button>
+    <button onclick="removeItem()">Remove Item</button>
+
+    <img id="image" src="https://images.unsplash.com/photo-1719937206255-cc337bccfc7d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image" width="200">
+    <button onclick="changeImage()">Change Image</button>
+    <script src="app.js"></script>
 </body>
 </html>
