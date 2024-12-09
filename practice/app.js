@@ -207,3 +207,40 @@ function changeImage () {
     image.style.padding = padding + "px";
     image.setAttribute("src", url)
 }
+
+
+const myBotton = document.querySelector("#myBotton");
+const removeButton = document.querySelector("#removeButton");
+
+
+    //////adding click event
+    // myBotton.addEventListener("click", function(){
+    //     console.log("button clicked");
+    // })
+
+
+    //////////////removing click event
+function handleClick() {
+    console.log("button clicked");
+}
+myBotton.addEventListener("click", handleClick);
+
+removeButton.addEventListener("click", function(){
+    myBotton.removeEventListener("click", handleClick);
+    console.log("event removed");
+});
+const colorSelect = document.querySelector("#colorSelect");
+const selectedColor = document.querySelector("#selectedColor");
+
+colorSelect.addEventListener("change", function() {
+    selectedColor.textContent = `selected Color Is ${colorSelect.value}`;
+})
+
+const username = document.querySelector("#username");
+const currentuser = document.querySelector("#currentuser");
+
+username.addEventListener("change", function() {
+    currentuser.textContent = `Current User: ${username.value}`;
+})
+
+////////////currence
